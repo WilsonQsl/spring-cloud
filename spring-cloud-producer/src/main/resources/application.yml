@@ -1,0 +1,12 @@
+server:
+  port: 8089
+spring:
+  cloud:
+    consul:
+      host: 192.168.239.132
+      port: 8500
+      discovery:
+        instance-id: producer
+        #service-name: consumer
+  application:
+    name: producer

@@ -1,0 +1,12 @@
+spring-cloud-api/target
+spring-cloud-consumer/target
+spring-cloud-producer/target
+spring-cloud-consul/target
+spring-cloud-configservice/target
+**/.settings/
+**/target/
+**/.classpath
+**/.project
+RemoteSystemsTempFiles/
+.recommenders/
+.metadata/
