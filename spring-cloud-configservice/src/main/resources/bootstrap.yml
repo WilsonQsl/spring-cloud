@@ -1,8 +1,0 @@
-spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/wilson11314/config-resouces
-      name: neo-config
-      search-paths: config-repo 
