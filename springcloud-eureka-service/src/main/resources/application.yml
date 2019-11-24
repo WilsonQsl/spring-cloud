@@ -1,0 +1,16 @@
+server:
+  port: 8671
+
+eureka:
+  instance:
+    hostname: localhost   #实例的名称
+    lease-expiration-duration-in-seconds: 90   #服务失效时间，Eureka多长时间没收到服务的renew操作，就剔除该服务，默认90秒
+  client:
+    register-with-eureka: false  #声明是一个服务端，专门提供数据的服务端
+    fetch-registry: false
+  service-url:
+    defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/   #eureka服务器地址
+
+spring:
+  application:
+    name: eureka-service

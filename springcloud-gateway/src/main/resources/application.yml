@@ -1,0 +1,12 @@
+server:
+  port: 80
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: gateway-service
+          uri: http://listinfotech.com
+          predicates:
+            - Path=/category/javaee/nginx/

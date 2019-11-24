@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="is-server-order" />
+        <module name="server-gateway" />
+        <module name="is-server-price" />
+        <module name="is-server-oauth" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="is-server-oauth" target="1.8" />
+      <module name="is-server-order" target="1.8" />
+      <module name="is-server-price" target="1.8" />
+      <module name="server-gateway" target="1.8" />
+      <module name="spring-security-oauth" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="is-server-oauth" options="-parameters" />
+      <module name="is-server-order" options="-parameters" />
+      <module name="is-server-price" options="-parameters" />
+      <module name="server-gateway" options="-parameters" />
+    </option>
+  </component>
+</project>

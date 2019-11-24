@@ -1,0 +1,14 @@
+server:
+  port: 8673
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8671/eureka  #服务的注册地址
+spring:
+  application:
+    name: eureka-consume   #服务的名称
+
+feign:
+  hystrix:
+    enabled: true  #开启熔断机制
