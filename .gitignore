@@ -9,6 +9,7 @@ spring-cloud-configservice/target
 **/.project
 **/mvnw
 **/mvnw.cmd
+**/.mvn
 RemoteSystemsTempFiles/
 .recommenders/
 .metadata/
