@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-gateway" />
+        <module name="springcloud-system" />
+        <module name="springcloud-user" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springcloud-gateway" target="1.8" />
+      <module name="springcloud-gateway (1)" target="1.8" />
+      <module name="springcloud-system" target="1.8" />
+      <module name="springcloud-user" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springcloud-gateway" options="-parameters" />
+      <module name="springcloud-gateway (1)" options="-parameters" />
+      <module name="springcloud-system" options="-parameters" />
+      <module name="springcloud-user" options="-parameters" />
+    </option>
+  </component>
+</project>

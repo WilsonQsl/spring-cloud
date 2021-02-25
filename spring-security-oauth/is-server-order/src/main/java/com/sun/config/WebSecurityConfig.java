@@ -16,5 +16,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	    public void configure(HttpSecurity http) throws Exception {
 	        http.antMatcher("/**").authorizeRequests()
 	            .anyRequest().authenticated();
+
 	    }
 }
