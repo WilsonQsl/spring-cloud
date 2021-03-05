@@ -2,16 +2,26 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="is-server-oauth" />
+        <module name="server-gateway" />
         <module name="springcloud-gateway" />
-        <module name="springcloud-system" />
+        <module name="is-server-price" />
         <module name="springcloud-user" />
+        <module name="springcloud-system" />
+        <module name="is-server-order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="is-server-oauth" target="1.8" />
+      <module name="is-server-order" target="1.8" />
+      <module name="is-server-price" target="1.8" />
+      <module name="server-gateway" target="1.8" />
+      <module name="spring-security-oauth" target="1.8" />
       <module name="springcloud-gateway" target="1.8" />
       <module name="springcloud-gateway (1)" target="1.8" />
       <module name="springcloud-system" target="1.8" />
@@ -20,6 +30,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="is-server-oauth" options="-parameters" />
+      <module name="is-server-order" options="-parameters" />
+      <module name="is-server-price" options="-parameters" />
+      <module name="server-gateway" options="-parameters" />
       <module name="springcloud-gateway" options="-parameters" />
       <module name="springcloud-gateway (1)" options="-parameters" />
       <module name="springcloud-system" options="-parameters" />

@@ -3,13 +3,38 @@ server:
 spring:
   application:
     name: gate-service-api
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: 8
+        min-idle: 8
+      shutdown-timeout: 100
+
   cloud:
     gateway:
       routes:
-        - id: gateway-service
-          uri: http://listinfotech.com
+        - id: sys-service-api #路由ID
+          uri: lb://sys-service-api      #匹配后路由地址
           predicates:
-            - Path=/category/javaee/nginx/
+            - Path=/api/sys/**  # 断言，路径相匹配的进行路由
+          filters:
+            - StripPrefix=1  #在请求转发前玻璃路径的个数
+
+        - id: user-service-api #路由ID
+          uri: lb://user-service-api      #匹配后路由地址
+          predicates:
+            - Path=/api/user/**  # 断言，路径相匹配的进行路由
+          filters:
+            - StripPrefix=1  #在请求转发前剥离路径的个数
+            - name: CustomRequestRateLimiter
+              args:
+                key-resolver: "#{@ipKeyResolver}" #SPEL表达式取的对应的bean
+                redis-rate-limiter.replenishRate: 1 # 允许用户每秒处理多少个请求
+                redis-rate-limiter.burstCapacity: 3 # 令牌桶的容量，允许在一秒钟内完成的最大请求数
     nacos:
       config:
         server-addr: 127.0.0.1:8848
