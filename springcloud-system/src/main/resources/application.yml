@@ -9,3 +9,29 @@ spring:
         server-addr: 127.0.0.1:8848
       discovery:
         server-addr: 127.0.0.1:8848
+logging:
+  level:
+    com.sun.feign.UserFeignService: debug # feign日志以什么级别监控哪个接口
+feign:
+  hystrix:
+    enabled: true
+
+user-service-api: #针对单个服务的 Ribbon 配置
+  ribbon:
+    # 基于配置文件形式的 针对单个服务的 Ribbon 负载均衡策略
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#hystrix配置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            #feign整合hystrix 光设置Hystrix 超时没用的要配合ribbon超时
+            timeoutInMilliseconds: 3000
+      circuitBreaker:
+        #默认20 ，熔断的阈值，如何user服务报错满足3次，熔断器就会打开，就算order之后请求正确的数据也不行。
+        requestVolumeThreshold: 3
+        #默认5S ， 等5S之后熔断器会处于半开状态，然后下一次请求的正确和错误讲决定熔断器是否真的关闭和是否继续打开
+        sleepWindowInMilliseconds: 8000
